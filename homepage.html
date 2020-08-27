@@ -1,0 +1,164 @@
+<html>
+<head>
+    <title>
+        Home Page
+    </title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body >
+  <div class="bdy">
+   <div class="head1" >
+       <p id="p1" style="text-underline-position: auto">GOVERNMENT &nbsp; E-SEVA &nbsp;EPASS</p>
+       <p id="p2"><b><i>Helpline contact: xxxxxxxxx </i></b></p>
+       <p id="p4" style="color: blue"><b><i>Use Arogya Sethu App</i></b></p>
+       <p id="p3"><b><i>Helpline gmail:xxxxxxxx@gmail</i></b></p>
+       
+   </div>
+   
+   <div id="mySidenav" class="sidenav">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+       <a href="status.html">Check State-wise Status</a>
+       <a href="check.html">check your jounney Safety</a>
+       <a href="https://en.wikipedia.org/wiki/Aarogya_Setu">Arogya Sethu Working</a>
+       <a href="login.html">Logout</a>
+   </div>
+   <span id="gg" style="font-size:30px;cursor:pointer;position: relative;left: 10px;width: 100%;top: 60px;color: rgb(0,250,0);
+   border-bottom-right-radius: 10px;
+   border-top-left-radius: 10px" onclick="openNav()">&#9776; Menu</span>
+    <div class="slider">
+        <div class="img slide">
+            <div class="number" style="font-size: 30px">
+                1/4
+            </div>
+            <img src="https://foreignpolicy.com/wp-content/uploads/2020/04/india-kolkata-coronavirus-social-distance-GettyImages-1211397615.jpg?w=800&h=533&quality=90" alt="social distance" style="width: 100%">
+            <div class="text">
+                Maintain social Distance..
+            </div>
+        </div>
+        <div class="img slide">
+            <div class="number" style="font-size: 30px;color: black">
+                2/4
+            </div>
+            <img src="https://media.wired.com/photos/5e6aac7295ff060008467cf9/master/w_2400,h_1350,c_limit/Science_Covid19-Infographic.jpg" alt="Graphical Representation" style="width: 100%">
+            <div class="text" style="color: lawngreen">
+                Rate of Corona in Graphical way..
+            </div>
+        </div>
+        <div class="img slide">
+            <div class="number" style="font-size: 30px">
+                3/4
+            </div>
+            <img src="https://foreignpolicy.com/wp-content/uploads/2020/03/coronavirus-world-after-brian-stauffer-illustration_response5.jpg" alt="Protect World by just sitting in Home" style="width: 100%">
+            <div class="text">
+                It's our duty to Protect the World from COVID..
+            </div>
+        </div>
+        <div class="img slide">
+            <div class="number" style="font-size: 30px">
+                4/4
+            </div>
+            <img src="https://www.aljazeera.com/mritems/Images/2020/4/22/233cb65aeb9a4508a4080006d9c560e2_8.jpg" alt="Migrants" style="width: 100%">
+            <div style="font-size: 30px" class="text">
+                Just don't migrate yourself towards COVID..
+            </div>
+        </div>
+        <a class="prev" onclick="Slides(-1)">&#10094;</a>
+        <a class="next" onclick="Slides(1)">&#10095;</a>
+    </div>
+    <br>
+    <br>
+    
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <h1 style="color: black;background-color: darkgreen;padding: 20px;"><i>FAQ's</i></h1>
+    <button class="accordion"><span id="butpos"><b>Prevention</b></span></button>
+    <div class="panel">
+    <p id="parapos">1. Wear a mask when physical distancing is not possible.</p>
+    <br><p id="parapos">2. Don’t touch your eyes, nose or mouth.</p>
+    <br><p id="parapos">3.Don't go out frequently for needs.</p>
+     
+    <br>
+    <br>   
+    </div>
+
+    <button class="accordion" ><span id="butpos"><b>Safety Rules</b></span></button>
+    <div class="panel">
+    <p id="parapos">1. STAYhome</p>
+    <br><p id="parapos">2. KEEPa safe distance</p>
+    <br><p id="parapos">3. WASHhands often</p>
+    <br><p id="parapos">4. COVERyour cough</p>
+    <br><p id="parapos">5. SICK?Call the helpline</p>
+    <br>
+    <br>
+    </div>
+
+    <button class="accordion"><span id="butpos"><b>Syptoms</b></span></button>
+    <div class="panel">
+    <p id="parapos">1. Fever</p>
+    <br><p id="parapos">2. Dry Cough</p>
+    <br><p id="parapos">3. Tiredness</p>
+    <br><p id="parapos">4. Loss taste and small</p>
+    <br>
+    <br> 
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>   
+    <script>
+        function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        }
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function Slides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("img");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function() { this.classList.toggle("active"); var panel=this.nextElementSibling; if (panel.style.display==="block" ) { panel.style.display="none" ; } else { panel.style.display="block" ; } }); }
+    </script>
+    </div>
+</body>
+
+</html>

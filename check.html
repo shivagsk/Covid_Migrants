@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>
+            CHECK YOUR TRAVEL SAFETY..
+        </title>
+    </head>
+    <style>
+        #btn{
+            border-radius: 4px;
+            position: relative;
+            top: 200px;
+            left: 540px;
+        }
+        #btn:hover{
+            background-color: #8f6ded;
+        }
+        #btn1{
+            border-radius: 4px;
+            position: relative;
+            top: 300px;
+            left: 540px;
+        }
+        #btn1:hover{
+            background-color: #8f6ded;
+        }
+    </style>
+    <script>
+        function homefun()
+        {
+            window.open("homepage.html");
+            window.close();
+        }
+    function checkfun()
+        {
+            var str=document.getElementById("sstate").value+","+document.getElementById("dstate").value;
+            var xhttp=new XMLHttpRequest();
+            xhttp.onreadystatechange=function(){
+                if(this.readyState==4 && this.status==200)
+                    {
+                        var res=this.responseText;
+                        //document.getElementById("r1").innerHTML=res;
+                        if(res=="1")
+                            {
+                                document.getElementById("r1").innerHTML="It is Safe for you to stay in source place only because COVID positive rate is more in "+document.getElementById("dstate").value;
+                            }
+                        else
+                            {
+                                document.getElementById("r1").innerHTML="You are Safe to go to your Destination "+document.getElementById("dstate").value;
+                            }
+                    }
+            };
+            xhttp.open("GET","check.php?q="+str, true);
+            xhttp.send();
+        }
+    </script>
+    <body style="background-color:#69d2e2; ">
+              <div class="marq" style="align-content: center;position: relative;top: 40px;">
+               <marquee behavior="scroll" direction="left" scrollamount="15" background-color="green">
+                   <p style="align-content: center;font-size: 25px;color: red;"><i><b>Check wheather your journey is save from COVID or not.</b></i></p>
+                </marquee>
+                </div>
+        <form >
+            <label for="sstate" style="align-content: center;position: relative;left: 405px;top: 100px;"><i><b>Choose Your Source Place &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b></i></label>
+        <abbr title="click down arrow"><select name="sstate" id="sstate" style="align-content: center;position: relative;left: 405px;top: 100px;">
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assaml">Assaml</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+            </select></abbr>
+            <label for="dstate" style="align-content: center;position: relative;left: 48px;top: 150px;"><i><b>Choose Your Destination Place :</b></i></label>
+           <abbr title="click down arrow"><select name="dstate" id="dstate" style="align-content: center;position: relative;left: 48px;top: 150px;">
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assaml">Assaml</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+               </select></abbr>
+        </form>
+        <button id="btn" onclick="checkfun()">Click Here</button>
+        <label for="reason" style="position: relative;top:300px;left: 320px;color: #08228b;" id="r1"></label>
+        <br>
+        <br>
+        <br>
+        <br>
+        <abbr title="return back to Home page"><input type="button" onclick="homefun()" id="btn1" value="Return Home"></abbr>
+        
+    </body>
+</html>

@@ -1,0 +1,138 @@
+<html>
+<title>
+    Login / Register Page
+</title>
+
+<head>
+    <link rel="stylesheet" href="log.css">
+</head>
+<script>
+    function registerfun()
+    {
+        var str=document.getElementById("ruser").value+","+document.getElementById("remail").value+","+document.getElementById("rpass").value;
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange= function(){
+            if(this.readyState==4 && this.status==200)
+                {
+                    var res=this.responseText;
+                    //var ss=typeof res;
+                    
+                    
+                    //
+                    if(res=="1")
+                        {
+                            //document.getElementById("error").innerHTML="";
+                            window.alert("Registered Successfully.")
+                           
+                    window.open("homepage.html");
+                           
+                        window.close();
+                    
+                         }
+                    else if(res=="0"){
+                        
+                        //document.getElementById("error1").innerHTML="Username or password you are typing is already in use.";
+                        window.alert("User already exists....");
+                        document.getElementById("error1").innerHTML="";
+                    }
+                    else{
+                        document.getElementById("error1").innerHTML=res;
+                        window.alert(res);
+                    }
+                }
+        };
+        xhttp.open("GET", "reg.php?q="+str, true);
+  xhttp.send();
+    }
+    function loginfun()
+    {
+        var str=document.getElementById("user").value+","+document.getElementById("pass").value;
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange= function(){
+            if(this.readyState==4 && this.status==200)
+                {
+                    var res=this.responseText;
+                    //var ss=typeof res;
+                    
+                    
+                    //
+                    if(res=="login successful")
+                        {
+                            //document.getElementById("error").innerHTML="";
+                            //var win;
+                            
+                   window.open("homepage.html");
+                            
+                        window.close();
+                            //window.alert("login successful..");
+                            //win.document.write("<marquee behavior="scroll" direction="left" scrollamount="15">Login successful</marquee>");
+                        }
+                    else{
+                        document.getElementById("error").innerHTML=res;
+                        window.alert(res);
+                        document.getElementById("error").innerHTML="";
+                        document.getElementById("user").innerHTML="";
+                        document.getElementById("pass").innerHTML="";
+                    }
+                }
+        };
+        xhttp.open("GET", "login1.php?q="+str, true);
+  xhttp.send();
+    }
+    
+</script>
+<body>
+    <div class="div1">
+
+        <a href="#divi1" class="link1">
+            <p id="t1"><big><i>Register</i></big></p>
+        </a>
+        <a href="#divi2" class="link2">
+            <p id="t1"><big><i>Login</i></big></p>
+        </a>
+        <marquee behavior="scroll" direction="left" scrollamount="15" ><i><b>
+                    <font face="verdana" color="840475" size="6">Maintain Social Distance and Mask. Let's Fight together and Win this Pandemic... </font>
+                </b></i></marquee>
+    </div>
+
+    <div class="div2">
+        <a name="divi1">
+           <div class="form1">
+            <form >
+             <label for="user" style="font-size: 20px;position: relative;top: 40px;left: 40px;">username :</label>
+            <abbr title="length should not exceed 20 words"><input type="text" name="user" id="ruser" style="height: 30px;width: 50%; position: relative;top: 40px;left: 35px;" required/></abbr><br><br>
+              <label for="gmail" style="font-size: 20px;position: relative;top: 60px;left: 40px;">email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</label>
+            <input type="email" name="user" id="remail" style="height: 30px;width: 50%; position: relative;top: 60px;left: 35px;" required/><br><br>
+            <label for="pass" style="font-size: 20px;position: relative;top: 80px;left: 40px;">Password :</label>
+            <abbr title="length should not exceed 20 words"><input type="text" name="pass" id="rpass" style="height: 30px;width: 50%;position: relative;top: 80px;left: 35px;" required/></abbr><br><br>
+            </form>
+            <input type="submit" value="Register" id="regbtn" onclick="registerfun()" style="height: 30px;width: 50%; position: relative;top: 100px;left: 90px; box-shadow: 0 0 10px 9px rgba( 239, 129, 61, 0.882 );
+    border-radius: 30px;border: 4px;"><br>    
+            <br>
+            <br>
+            <p id="error1" style="color: red;font-size: 16px; position: relative;top: 10px;left: 100px;"></p>
+            </div>
+        </a>
+        
+    </div>
+    <div class="div3">
+        <a name="divi2"> 
+       <div class="form">
+        <form >
+           <label for="user" style="font-size: 20px;position: relative;top: 40px;left: 40px;">username :</label>
+            <abbr title="length should not exceed 20 words"><input type="text" name="user" id="user" style="height: 30px;width: 50%; position: relative;top: 40px;left: 35px;" required/></abbr><br><br>
+            <label for="pass" style="font-size: 20px;position: relative;top: 60px;left: 40px;">Password :</label>
+            <abbr title="length should not exceed 20 words"><input type="password" name="pass" id="pass" style="height: 30px;width: 50%;position: relative;top: 60px;left: 35px;" required/></abbr><br><br>
+            </form>
+            <input type="submit" value="Login" id="logbtn" onclick="loginfun()" style="height: 30px;width: 50%; position: relative;top: 80px;left: 90px; box-shadow: 0 0 10px 9px rgba( 239, 129, 61, 0.882 );
+    border-radius: 30px;border: 4px;"><br>    
+            <br>
+            <br>
+            <p id="error" style="color: red;font-size: 16px; position: relative;top: 100px;left: 100px;"></p>
+        </div>
+        </a>
+    </div>
+
+</body>
+
+</html>
